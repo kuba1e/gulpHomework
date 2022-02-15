@@ -3,7 +3,7 @@ const concat = require('gulp-concat');
 const cleanCss = require('gulp-clean-css')
 const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
-import imagemin from "gulp-imagemin"
+const imagemin = require('gulp-imagemin');
 const sync = require('browser-sync').create();
 
 
@@ -30,20 +30,18 @@ function minHtml(cb){
     .pipe(dest('dist'))
   cb()
 }
-
+/*
 function minImg(cb){
   src('src/img/*')
   .pipe(imagemin())
   .pipe(dest('dist/img'))
   cb()
-}
+}*/
 
 function browserSync(cb) {
   sync.init({
       server: {
-          baseDir: "./",
-          port:3000,
-          notify: false
+          baseDir: "./"
       }
   });
 
